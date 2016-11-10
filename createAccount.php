@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <HTML>
 	<HEAD>
 		<title>
@@ -5,21 +6,18 @@
 		</title>
 	</HEAD>
 <BODY>
-	<img src="goodvibeslogo.jpg" />
+	<img src="goodvibeslogo.jpg" width="25%" height="25%" alt="logo"/>
 	<hr />
-	<h1>Create New Account</h1>
-<form action="login_script.php" method="POST">
+	<h1 align="center">Create New Account</h1>
+<form align="center" action="createAccount_script.php" method="POST">
 
-<p>Enter Desired Username: <input type:"text" name="username" size="30"/></p>
-<p>Enter Desired Password: <input type:"text" name="password" size="30"/></p>
-<p>Re-Enter Desired Password: <input type:"text" name="password" size="30"/></p>
+<p>First Name: <input type="text" name = "fname" size = "30"/></p>
+<p>Last Name: <input type="text" name = "lname" size = "30"/></p>
+<p>Enter Desired Username: <input type="text" name="username" size="30"/></p>
+<p>Enter Desired Password: <input type="password" name="password" size="30"/></p>
+<p>Re-Enter Desired Password: <input type="password" name="repassword" size="30"/></p>
 
 <input type="submit" name="submit" value="Submit"/>
-
-
-
-
-
-
+</form>
 </BODY>
 </HTML>
