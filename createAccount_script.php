@@ -19,9 +19,9 @@
 			}else{
 				echo "New record not created";
 			}
-			$_SESSION['message'] = "You are now logged in";
-			$_SESSION['username'] = $username;
-			header("location: home.php"); //redirect to home page
+			//$_SESSION['message'] = "You are now logged in";
+			//$_SESSION['username'] = $username;
+			header("location: login.php"); //redirect to home page
 		}else{
 			$_SESSION['message'] = "The two passwords do not match";
 		}
