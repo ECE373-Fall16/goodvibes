@@ -29,6 +29,15 @@
 
 ?>
 
+<STYLE>
+body {
+	background-image: url("goodvibeslogo.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+</STYLE>
+
 
 <HTML>
 	<HEAD>
@@ -37,7 +46,7 @@
 		</title>
 	</HEAD>
 <BODY>
-	<img src="goodvibeslogo.jpg" />
+	
 	<hr />
 	<h1>Login</h1>
 <form action="" method="POST">
