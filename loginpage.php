@@ -25,38 +25,35 @@
 	}
 
 ?>
-
-<STYLE>
-body {
-	background-image: url("goodvibeslogo.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100%;
-}
-</STYLE>
-
-
+<!DOCTYPE html>
 <HTML>
 	<HEAD>
+
 		<title>
 		Good Vibes Login
 		</title>
 	</HEAD>
 <BODY>
-
+	<STYLE>
+body {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+	background-color: lightblue;
+}
+</STYLE>
+	<a href="loginpage.php"><img src="goodvibeslogo.jpg" width="25%" height="29%" alt="logo" align="left"><a>
+	</br></br></br></br></br></br></br></br></br></br>
 	<hr />
-	<h1>Login</h1>
-<form action="" method="POST">
+
+	<h1 align="center">Login</h1>
+<form align="center" action="" method="POST">
 
 <p>Username: <input type="text" name="username" size="30"/></p>
 <p>Password: <input type="password" name="password" size="30"/></p>
 
 <input type="submit" name="submit" value="Submit"/>
 </br>New User? <a href="createAccount.php">Create Account</a>
-
-
-
-
 
 </BODY>
 </HTML>
