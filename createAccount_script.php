@@ -26,7 +26,7 @@
 			//$_SESSION['username'] = $username;
 			header("location: loginpage.php"); //redirect to home page
 		}else{
-			$_SESSION['message'] = "The two passwords do not match";
+			print "Passwords do not match. Please return to previous page and try again.";
 		}
 	}
 ?>
