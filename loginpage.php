@@ -2,17 +2,14 @@
 	$database = mysqli_connect("localhost","root","password","user_accounts"); // connect to database
 
 	session_start(); // start a session
-	print "hello";
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST") { // if data has been entered, get it
-		print "awdjaioawda";
+
 		$username = mysqli_real_escape_string($database,$_POST['username']); // get username from login page
 		$password = mysqli_real_escape_string($database,$_POST['password']); // get password from login page
 		
 		$result = mysqli_query($database,"SELECT * FROM accounts WHERE username = '$username' and password = '$password'"); // find the username and account in the database
 		$row = mysqli_fetch_array($result,MYSQLI_BOTH); // find the row of the account
-		
-		print "helloaawdkawd";
 		
 		$count = mysqli_num_rows($result); // count how many rows have that user name and password
 		
@@ -22,7 +19,7 @@
 			header("location: login_script.php");
 		}
 		else{
-			$error_message = "your account doesn't exist";
+			$error_message = "YOUR ACCOUNT DOESN'T EXIST";
 			print $error_message;
 		}
 	}
@@ -46,7 +43,7 @@ body {
 		</title>
 	</HEAD>
 <BODY>
-	
+
 	<hr />
 	<h1>Login</h1>
 <form action="" method="POST">
@@ -55,7 +52,7 @@ body {
 <p>Password: <input type="password" name="password" size="30"/></p>
 
 <input type="submit" name="submit" value="Submit"/>
-</br>New User? <a href="register.php">Create Account</a>
+</br>New User? <a href="createAccount.php">Create Account</a>
 
 
 
