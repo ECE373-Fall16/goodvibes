@@ -1,7 +1,6 @@
 <?php
-	$database = mysqli_connect("localhost","root","password","user_accounts"); // connect to database
-	
 	session_start(); // start the session
+	$database = mysqli_connect("localhost","root","password","user_accounts"); // connect to database
 	
 	$username = $_SESSION['logged_in_user']; // get the username of the user thats logged in
 	
