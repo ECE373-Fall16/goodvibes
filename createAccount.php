@@ -14,6 +14,7 @@
 <p>First Name: <input type="text" name = "fname" size = "30"/></p>
 <p>Last Name: <input type="text" name = "lname" size = "30"/></p>
 <p>Enter Desired Username: <input type="text" name="username" size="30"/></p>
+<p>Enter Email: <input type="text" name="email" size="30"/></p>
 <p>Enter Desired Password: <input type="password" name="password" size="30"/></p>
 <p>Re-Enter Desired Password: <input type="password" name="repassword" size="30"/></p>
 
