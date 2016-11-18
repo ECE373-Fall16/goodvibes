@@ -18,7 +18,7 @@ body {
 	</br></br></br></br></br></br></br></br></br></br>
 	<hr />
 	<h1 align="center">Create New Account</h1>
-<form align="center" action="createAccount.php" method="POST">
+<form align="center" action="createAccount_script.php" method="POST">
 
 <p>First Name: <input type="text" name = "fname" size = "30"/></p>
 <p>Last Name: <input type="text" name = "lname" size = "30"/></p>
