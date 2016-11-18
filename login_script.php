@@ -41,8 +41,8 @@
 	<h1 align="left"> Genre: <?php print "$genre" ?></h1>
 	<h1 align="left"> Location: <?php print "$location" ?></h1>
 	<h1 align="left"> Instruments played: <?php print "$instruments" ?></h1>	
-	<h1 align="left"> Age: <?php print "$age" ?></h1>
-	<h1 align="left"> Experience (years): <?php print "$experience" ?></h1>	
+	<h1 align="left"> Age: <?php if($age!=0) print "$age" ?></h1>
+	<h1 align="left"> Experience (years): <?php if($experience!=0) print "$experience" ?></h1>	
 	
 	
 	<h2><a href="logout.php">Log Out</a></h2>
