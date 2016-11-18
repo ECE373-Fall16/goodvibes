@@ -5,21 +5,6 @@
 	if(!$db){
 		echo "Not Connected to server";
 	}
-	$required = array('fname','lname','username','email','password','repassword');
-
-// Loop over field names, make sure each one exists and is not empty
-	$error = false;
-	foreach($required as $field) {
-	if (empty($_POST[$field])) {
-		$error = true;
-		}
-	}
-
-	if ($error) {
-		header("location: createaccount.php");
-		$_SESSION['message'] = "All fields required";
-	} else {
-
 	if (isset($_POST['submit'])) {
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
@@ -27,8 +12,6 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		$repassword = $_POST['repassword'];
-		// Required field names
-
 		if ($password == $repassword) {
 			// create user
 			$sql = "INSERT INTO accounts(id, fname, lname, username, email, password) VALUES(NULL, '$fname','$lname','$username', '$email', '$repassword')";
@@ -45,6 +28,5 @@
 		}else{
 			print "Passwords do not match. Please return to previous page and try again.";
 		}
-	}
 	}
 ?>
