@@ -1,6 +1,6 @@
 <?PHP
+	include ('./inc/header.php');
 	include('session.php');
-//	print "welcome $logged_in_user";
 	
 	$database = mysqli_connect("localhost","root","password","user_accounts"); // connect to database
 
@@ -16,35 +16,57 @@
 	$instruments = $accountrow['instruments']; 
 	$age = $accountrow['age']; 
 	$experience = $accountrow['experience']; 
+	$scuser = $accountrow['scuser'];
 	
 	$fname = $accountrow2['fname'];
 	$lname = $accountrow2['lname'];
 	$username = $logged_in_user;
 	$email = $accountrow2['email'];
+	if(isset($_POST['uploadpic'])){
+		move_uploaded_file($_FILES['file']['tmp_name'],"pictures/".$_FILES['file']['name']);
+		$q=mysqli_query($database, "UPDATE profiles SET image = '".$_FILES['file']['name']."' WHERE username = '$logged_in_user'");
+		
+		
+	}
 
 
 ?>
-
 <HTML>
-	<HEAD>
-		<title>
-		Welcome!
-		</title>
-	</HEAD>
+<HEAD>
+<TITLE>Profile </TITLE>
+</HEAD>
 <BODY>
 
-	<img src="goodvibeslogo.jpg" width="25%" height="25%" alt="logo"/>
+<STYLE>
+body {
+	background-color: lightblue;
+}
+</STYLE>
+
 	<hr />
 	<h1 align="left"> <?php print "$fname $lname" ?></h1>
+	<p>Upload Profile Photo:</p>
+	<?php
+	$con = mysqli_connect("localhost", "root", "password", "user_accounts");
+	$q = mysqli_query($database, "SELECT * FROM profiles WHERE username = '$logged_in_user'");
+	$row = mysqli_fetch_assoc($q);
+	if($row['image'] == "")
+		echo "<img width='100' height='100' src= 'pictures/default.png' alt='Default Profile Pic'>";
+	else
+		echo "<img width='200' height='200' src= 'pictures/".$row['image']."' alt='Default Profile Pic'>";
+	?>
+	<form action="profile.php" method="POST" enctype="multipart/form-data">
+	<input type="file" name="file" /> <br />
+	<input type="submit" name="uploadpic" value="Upload Image">
+	</form>
 	<h1 align="left"> Username: <?php print "$username" ?></h1>
 	<h1 align="left"> Contact info: <?php print "$email" ?></h1>
 	<h1 align="left"> Genre: <?php print "$genre" ?></h1>
 	<h1 align="left"> Location: <?php print "$location" ?></h1>
 	<h1 align="left"> Instruments played: <?php print "$instruments" ?></h1>	
 	<h1 align="left"> Age: <?php if($age!=0) print "$age" ?></h1>
-	<h1 align="left"> Experience (years): <?php if($experience!=0) print "$experience" ?></h1>	
-	
-	
+	<h1 align="left"> Experience (years): <?php if($experience!=0) print "$experience" ?></h1>
+	<h1 align="left"> SoundCloud Link: <?php print '<a href="'.$scuser.'">'.$scuser.'</a>' ?></h1>
 	<h2><a href="logout.php">Log Out</a></h2>
 	<h3><a href="deleteaccount.php">Deactivate Account</a></h3>
 	<h4><a href="editprofile.php">Edit Profile</a></h3>
