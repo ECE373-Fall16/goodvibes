@@ -9,4 +9,4 @@ php:
   - nightly
 
 script:
-  - make && make testscript
+  - phpunit CreateAccountTest.php
