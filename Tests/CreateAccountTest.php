@@ -1,7 +1,12 @@
 <?php
 
-require_once 'createAccount.php'
+namespace ECE373-Fall16/goodvibes/edit/master/Tests;
 
-class CreateAccountTest extends PHPUnit_Framework_TestCase{}
+use 'createAccount.php';
+
+class CreateAccountTest extends PHPUnit_Framework_TestCase{
+  
+  
+}
 
 ?>
