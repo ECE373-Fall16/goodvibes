@@ -41,9 +41,6 @@
 <HEAD>
 <TITLE><?php echo $username?>'s Profile </TITLE>
 	</style>
-<script language="javascript" type="text/javascript">
-
-</script>
 
 </HEAD>
 <BODY>
@@ -67,7 +64,9 @@
 	$i=1;
 	while($i<=$numrows){
 		$row = mysqli_fetch_array($bands);
-		echo "<option value=$row[name]> $row[name] </option>";
+	?>
+	<option value="<?php echo $row['name'];?>"> <?php echo $row['name']; ?></option>";
+	<?php
 		$i++;
 	}
 	?>

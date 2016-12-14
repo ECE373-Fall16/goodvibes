@@ -30,12 +30,11 @@
 		
 		
 	}
-
-
 ?>
 <HTML>
 <HEAD>
-<TITLE>Profile </TITLE>
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<TITLE><?php echo $logged_in_user ?>'s Profile </TITLE>
 </HEAD>
 <BODY>
 	<h1 align="left"> <?php print "$fname $lname" ?></h1>
@@ -58,8 +57,8 @@
 	<h1 align="left"> SoundCloud Link: <?php print '<a href="'.$scuser.'">'.$scuser.'</a>' ?></h1>
 	<h2><a href="editprofile.php">Edit Profile</a></h2>
 	<h3><a href="deleteaccount.php">Deactivate Account</a></h3>
-
-
+</div>
 
 </BODY>
 </HTML>
+

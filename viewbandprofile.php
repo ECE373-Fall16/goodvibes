@@ -33,7 +33,7 @@
 	if($bandrow['bandpic'] == "")
 		echo "<img width='200' height='200' src= 'pictures/default.png' alt='Default Profile Pic'>";
 	else
-		echo "<img width='200' height='200' src= 'pictures/".$bandrow['image']."' alt='Profile Pic'>";
+		echo "<img width='200' height='200' src= 'pictures/".$bandrow['bandpic']."' alt='Profile Pic'>";
 	?>
 	
 	<h1 align="left"> Genre: <?php print "$genre" ?></h1>
@@ -64,7 +64,10 @@
 		</div>
 	</div>
 	</div>
-	Members:
+	<?php if(!empty($members)){
+	echo "<h2>Members:</h2>";
+	}
+	?>
 	<?php
     for($i=1;$i<=10;$i++){ 
 		if($members[$i]!=""){
@@ -94,5 +97,11 @@
 	</div>
 	</div>
 	 <?php 
-		}
-	 } ?>                                                         
+		}		
+	 } 
+	 if($logged_in_user==$leader){
+		echo "<h3><a href='editbandprofile.php?id=$id'>Edit Band Profile</a></h3>";
+	 }
+?> 
+ 
+	 
