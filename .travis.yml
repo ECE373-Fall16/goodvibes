@@ -20,5 +20,4 @@ before_script:
   
 #phpunit --bootstrap src/autoload.php Tests/CreateAccountScriptTest
 script:
-  - phpunit CreateAccountScriptTest.php
-
+  - phpunit Tests/CreateAccountScriptTest.php
