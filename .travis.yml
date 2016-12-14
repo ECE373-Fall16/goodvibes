@@ -22,3 +22,6 @@ before_script:
 #phpunit --bootstrap src/autoload.php Tests/CreateAccountScriptTest
 script:
   - phpunit ./Tests/CreateAccountScriptTest.php
+  - phpunit ./Tests/DatabaseConnectionTest.php
+  - phpunit ./Tests/EditProfileScriptTest.php
+  - phpunit ./Tests/LoginPageTest.php
