@@ -1,1 +1,1 @@
-php Tests/CreateAccountScriptTest.php
+php CreateAccountScriptTest.php
