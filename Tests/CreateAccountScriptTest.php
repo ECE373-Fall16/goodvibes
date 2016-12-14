@@ -11,7 +11,7 @@ class CreateAccountScriptTest extends PHPUnit_Framework_TestCase{
 	  $username "";
 	  $password = "";
 	  $repassword = "";
-	  $this->assertEquals($error, false);
+	  $this->assertEquals($error, true);
   }
   
 }
