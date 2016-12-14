@@ -10,10 +10,14 @@ php:
  - hhvm
  - nightly
  
+env:
+ - DB=mysql
+ 
 before_script:
  - phpenv config-rm xdebug.ini
  - composer self-update
  - composer install
   
-script:
-  - phpunit CreateAccountTest.php
+script: phpunit --configuration phpunit_$DB.xml --coverage-text
+#script:
+#  - phpunit CreateAccountTest.php
