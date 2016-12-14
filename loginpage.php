@@ -10,13 +10,13 @@
 		
 		$result = mysqli_query($database,"SELECT * FROM accounts WHERE username = '$username' and password = '$password'"); // find the username and account in the database
 		$row = mysqli_fetch_array($result,MYSQLI_BOTH); // find the row of the account
-		
 		$count = mysqli_num_rows($result); // count how many rows have that user name and password
 		
 		if($count == 1){ // if there is 1 and only 1 account in the database with that username and password
+			$_SESSION['loggedIn'] = true;
 			$_SESSION['logged_in_user'] = $username; // create new session 
 			print "congrats u logged in!!!";
-			header("location: login_script.php");
+			header("location: profile.php");
 		}
 		else{
 			$error_message = "YOUR ACCOUNT DOESN'T EXIST";

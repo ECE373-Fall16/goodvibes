@@ -28,23 +28,26 @@
 		$password = $_POST['password'];
 		$repassword = $_POST['repassword'];
 		// Required field names
-
-		if ($password == $repassword) {
-			// create user
-			$sql = "INSERT INTO accounts(id, fname, lname, username, email, password) VALUES(NULL, '$fname','$lname','$username', '$email', '$repassword')";
-			$sql2 = "INSERT INTO profiles(id, username, genre, location, instruments, age, experience) VALUES(NULL, '$username', '','','',0,0)";
-			$addprofile = mysqli_query($db, $sql2);
-			if(mysqli_query($db, $sql)){
-				echo "New record created successfully";
-			}else{
-				echo "New record not created";
+		$query = mysqli_query($db,"SELECT username FROM accounts WHERE username='$username'");
+		if (mysqli_num_rows($query) != 0)
+			echo "Username already exists";
+		else{
+			if ($password == $repassword) {
+				// create user
+				$sql = "INSERT INTO accounts(id, fname, lname, username, email, password) VALUES(NULL, '$fname','$lname','$username', '$email', '$repassword')";
+				$sql2 = "INSERT INTO profiles(id, fname, lname, username, email, genre, location, instruments, age, experience, image, scuser) VALUES(NULL, '$fname', '$lname', '$username', '$email','','','',0,0,'','')";
+				$addprofile = mysqli_query($db, $sql2);
+				if(mysqli_query($db, $sql)){
+					echo "New record created successfully";
+				}else{
+					echo "New record not created";
+				}
+				//$_SESSION['message'] = "You are now logged in";
+				//$_SESSION['username'] = $username;
+				header("location: loginpage.php"); //redirect to home page
+			}else
+				print "Passwords do not match. Please return to previous page and try again.";
 			}
-			//$_SESSION['message'] = "You are now logged in";
-			//$_SESSION['username'] = $username;
-			header("location: loginpage.php"); //redirect to home page
-		}else{
-			print "Passwords do not match. Please return to previous page and try again.";
 		}
-	}
 	}
 ?>

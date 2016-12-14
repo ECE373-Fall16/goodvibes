@@ -6,6 +6,12 @@
 	if(!$db){
 		echo "Not Connected to server";
 	}
+	if(isset($_POST['uploadpic'])){
+			move_uploaded_file($_FILES['file']['tmp_name'],"pictures/".$_FILES['file']['name']);
+			$q=mysqli_query($database, "UPDATE profiles SET image = '".$_FILES['file']['name']."' WHERE username = '$logged_in_user'");
+			header("location:editprofile.php");
+			exit();
+	}
 	if (isset($_POST['submit'])) {
 		
 		if(($_POST['genre'])!=''){
@@ -32,9 +38,14 @@
 			$experience = $_POST['experience'];
 			$setexperience = mysqli_query($database,"UPDATE profiles SET experience = '$experience' WHERE username = '$logged_in_user'");
 		}
+		if(($_POST['scuser'])!=''){
+			$scuser = $_POST['scuser'];
+			$setscuser = mysqli_query($database,"UPDATE profiles SET scuser = '$scuser' WHERE username = '$logged_in_user'");
+		}
+		
 	}
 		
-		header("location: login_script.php"); //redirect to home page
+		header("location: profile.php"); //redirect to home page
 		
 	
 ?>
