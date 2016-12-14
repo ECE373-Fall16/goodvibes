@@ -1,14 +1,15 @@
 language: php
 
+git update-index --chmod=+x Tests;
 sudo: required
 php:
  - '5.4'
  - '5.5'
  - '5.6'
  - '7.0'
-# - '7.1'
-# - hhvm
-# - nightly
+ - '7.1'
+ - hhvm
+ - nightly
  
 env:
  - DB=mysql
@@ -19,4 +20,5 @@ before_script:
  - composer install
   
 #phpunit --bootstrap src/autoload.php Tests/CreateAccountScriptTest
-script: Tests/Test.sh
+script:
+  - phpunit ./Tests/CreateAccountScriptTest.php
