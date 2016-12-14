@@ -19,5 +19,4 @@ before_script:
  - composer install
   
 #phpunit --bootstrap src/autoload.php Tests/CreateAccountScriptTest
-script:
-  - phpunit Tests/Test.sh
+script: Tests/Test.sh
