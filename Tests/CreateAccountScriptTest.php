@@ -1,5 +1,5 @@
 <?php
-namespace ECE373-Fall16/goodvibes/edit/master/Tests;
+namespace ECE373-Fall16/goodvibes/;
 
 use 'createAccount_script.php';
 
